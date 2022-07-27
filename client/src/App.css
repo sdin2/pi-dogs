@@ -1,0 +1,252 @@
+.container {
+  border: 2px solid #ccc;
+  width: 300px;
+  height: 300px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Shalimar', cursive;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image {
+  max-height: 50%;
+}
+
+.cointainer2 {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1%;
+  flex-direction: row;
+  margin-left: 25%
+}
+
+.temperaments {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.h4-temperaments {
+  margin-left: 0.25%;
+  margin-bottom: 0%;
+}
+
+.button-clenser {
+  font-family: 'Pacifico', cursive;
+  font-family: 'Shalimar', cursive;
+}
+
+.cardsgrid {
+  text-decoration: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: 1%;
+
+}
+
+.cardsgrid:link {
+  text-decoration: none;
+}
+
+.cards {
+  margin-right: 25px;
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: rgb(208, 198, 198);
+  width: 350px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Shalimar', cursive;
+  text-decoration: none;
+  text-decoration-line: none;
+  margin-bottom: 10%;
+  height: 550px;
+  font-size: large;
+}
+
+.cards:link {
+  text-decoration: none;
+}
+
+.cards:hover {
+  box-shadow: 0 0 20px rgb(52, 15, 101), 0 0 20px rgb(9, 168, 203), 0 0 50px rgb(21, 115, 42);
+  transform: scale(1.10, 1.10) !important
+}
+
+.card {
+  box-shadow: 0 0 20px rgb(52, 15, 101), 0 0 20px rgb(9, 168, 203), 0 0 50px rgb(21, 115, 42);
+  margin-right: 25px;
+  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  background-color: rgb(208, 198, 198);
+  width: 600px;
+  height: 700px;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Shalimar', cursive;
+  text-decoration: none;
+  text-decoration-line: none;
+  margin-bottom: 10%;
+  font-size: large;
+  position: relative;
+  border-radius: 12px;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+.cardCointainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* .card {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  height: 30%;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: rgba(195, 218, 245, 0.8);
+  background-image: linear-gradient(-225deg, snow 0%, silver 100%);
+  font-family: 'Pacifico', cursive;
+  font-family: 'Shalimar', cursive;
+  align-items: center;
+} */
+
+.paginado {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Shalimar', cursive;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  align-items: center;
+  justify-content: center;
+}
+
+.number {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+  width: 5px;
+  height: 5px;
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  color: snow;
+  border-radius: 100%;
+  font-size: 15px;
+  cursor: pointer;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Shalimar', cursive;
+  box-shadow: 0 0 20px rgb(148, 217, 217), 0 0 20px rgb(192, 171, 217), 0 0 50px rgb(191, 236, 201);
+
+}
+
+
+
+.number:active {
+  box-shadow: 0 0 20px rgb(255, 0, 0), 0 0 20px rgb(255, 0, 0), 0 0 50px rgb(255, 0, 0);
+
+}
+
+
+.number:hover {
+  box-shadow: 0 0 20px rgb(11, 200, 200), 0 0 20px rgb(88, 18, 174), 0 0 50px rgb(21, 115, 42);
+}
+
+.cointainer3 {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  width: 300px;
+  margin-left: 40%;
+}
+
+.input {
+  border-radius: 999cm;
+  margin-bottom: 1%;
+  margin-top: 1%
+}
+
+.label {
+  font-family: 'Pacifico', cursive;
+  font-family: 'Shalimar', cursive;
+}
+
+.button {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+  width: 50px;
+  height: 50px;
+  padding: 50px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  color: snow;
+  border-radius: 100%;
+  top: 705px;
+  left: 48%;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 46%;
+  font-family: 'Pacifico', cursive;
+  font-family: 'Shalimar', cursive;
+  box-shadow: 0 0 20px rgb(221, 10, 10), 0 0 20px rgb(88, 18, 174), 0 0 50px rgb(21, 115, 42);
+
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
