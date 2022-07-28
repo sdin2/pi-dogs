@@ -47,8 +47,8 @@ function validate(input) {
     if (input.breed === "") {
         error.breed = "Se requiere por lo menos una raza"
     }
-    else if (input.breed) {
-        return ""
+    else if (re1.test(input.breed)) {
+        error.breed = "La raza solo puede contener letras"
     }
     if (input.temperament.length === 0) {
         error.temperament = "Debe seleccionar por lo menos un temperamento"
@@ -238,7 +238,7 @@ export default function DogCreate() {
         <div>
             <Link to="/home"><button className="button">Volver</button></Link>
             <h1>Creá a tu perro</h1>
-            <h2>Los campos con * son obligatorios</h2>
+            <h4>Los campos con * son obligatorios</h4>
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="cointainer3">
                     <label className="label">*Nombre: </label>
@@ -270,7 +270,7 @@ export default function DogCreate() {
                     }
 
                     <label className="label">Años de vida:
-                        <input className="input" type="text" value={input.life_span} name="life_span" onChange={(e) => handleOnchange(e)} /> años</label>
+                        <input className="input" type="text" value={input.life_span} name="life_span" onChange={(e) => handleOnchange(e)} />  años</label>
                 </div>
                 <div className="cointainer2">
                     <div className="container">
