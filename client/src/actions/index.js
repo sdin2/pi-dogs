@@ -123,7 +123,9 @@ export function postDogs(payload){
         else if (!payload.weightmin) {payload.weightmin="No hay datos"}
 
         if(!payload.image){payload.image="https://j.gifs.com/ygdY27.gif"}
+        
         if(!payload.temperament){payload.temperament="Sin definir"}
+
         if(!payload.breed){payload.breed="Sin definir"}
         
         let a= payload.name.split("")

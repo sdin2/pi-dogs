@@ -97,13 +97,17 @@ export default function DogCreate() {
     }
 
     function handleCheck(e) { // este es para el ratio
-        console.log(e.target.value)
-        setInput({
-            ...input,
-            breed: e.target.value
-        })
-        // console.log(input.breed)
+        e.target.checked ?
+            setInput({
+                ...input,
+                breed: e.target.value
+            }) :
+            setError(validate({
+                ...input,
+                breed: e.target.value
+            }))
 
+        // console.log(input.breed)
     }
 
 
@@ -160,14 +164,21 @@ export default function DogCreate() {
     }
 
     function handleSelect(e) { //este es para el checkbox
-        console.log(e.target.value)
+        // console.log(e.target.value)
         e.target.checked ? setInput({
             ...input,
             temperament: [...input.temperament, e.target.value]
-
-        }) : setRender({
-            temperament: input.temperament.splice(input.temperament.indexOf(e.target.value))
+        }) : setInput({
+            ...input,
+            temperament: input.temperament.filter(b => e.target.value !== b)
+        });
+        setError(validate({
+            ...input,
+            temperament: e.target.value
         })
+        )
+
+
         // console.log(input.temperament)
 
     }
@@ -227,47 +238,43 @@ export default function DogCreate() {
         <div>
             <Link to="/home"><button className="button">Volver</button></Link>
             <h1>Creá a tu perro</h1>
-
+            <h2>Los campos con * son obligatorios</h2>
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="cointainer3">
-                    <label className="label">Nombre: </label>
+                    <label className="label">*Nombre: </label>
                     <input className="input" type="text" pattern="[A-Za-z *]{1,}" value={input.name} name="name" onChange={(e) => handleOnchange(e)} />
-                    {input.name === "" ?
+                    {error.name ?
                         <p className="error">{error.name}</p> : []
                     }
 
                     <label className="label">Imagen: </label>
                     <input className="input" type="text" value={input.image} name="image" onChange={(e) => handleOnchange(e)} />
 
-                    <label className="label">Altura maxima: </label>
-                    <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.heightmax} name="heightmax" onChange={(e) => handleOnchange(e)} />
+                    <label className="label">*Altura maxima: <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.heightmax} name="heightmax" onChange={(e) => handleOnchange(e)} />  cm</label>
                     {error.heightmax &&
                         <p className="error">{error.heightmax}</p>
                     }
 
-                    <label className="label">Altura minima: </label>
-                    <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.heightmin} name="heightmin" onChange={(e) => handleOnchange(e)} />
+                    <label className="label">*Altura minima: <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.heightmin} name="heightmin" onChange={(e) => handleOnchange(e)} /> cm</label>
                     {error.heightmin &&
                         <p className="error">{error.heightmin}</p>
                     }
-                    <label className="label">Peso maximo: </label>
-                    <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.weightmax} name="weightmax" onChange={(e) => handleOnchange(e)} />
+                    <label className="label">*Peso maximo: <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.weightmax} name="weightmax" onChange={(e) => handleOnchange(e)} /> kg</label>
                     {error.weightmax &&
                         <p className="error">{error.weightmax}</p>
                     }
 
-                    <label className="label">Peso minimo: </label>
-                    <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.weightmin} name="weightmin" onChange={(e) => handleOnchange(e)} />
+                    <label className="label"> *Peso minimo:  <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.weightmin} name="weightmin" onChange={(e) => handleOnchange(e)} /> kg</label>
                     {error.weightmin &&
                         <p className="error">{error.weightmin}</p>
                     }
 
-                    <label className="label">Años de vida: </label>
-                    <input className="input" type="text" value={input.life_span} name="life_span" onChange={(e) => handleOnchange(e)} />
+                    <label className="label">Años de vida:
+                        <input className="input" type="text" value={input.life_span} name="life_span" onChange={(e) => handleOnchange(e)} /> años</label>
                 </div>
                 <div className="cointainer2">
                     <div className="container">
-                        <label>Razas: </label>
+                        <label>*Razas: </label>
                         {
                             breeds.map(e => {
                                 return (
@@ -279,7 +286,7 @@ export default function DogCreate() {
                         <input type="text" placeholder="Crea tu propia raza" pattern="[A-Za-z]{3,}" onKeyDown={e => e.keyCode === 13 ? handleBreedCreator(e) : " "} />
                     </div>
                     <div className="container">
-                        <label>Temperamentos: </label>
+                        <label>*Temperamentos: </label>
 
                         {
                             temperament.map(e => {
@@ -294,18 +301,22 @@ export default function DogCreate() {
                     </div>
                     <button onClick={e => handleUncheck(e)} className="button-clenser">Limpiar temperamentos</button>
                 </div>
+                <div>
+                    {input.breed === "" ?
+                        <p className="error">{error.breed}</p> : <p>raza : {input.breed}</p>
+                    }
+                </div>
                 <div className="temperaments">
+
                     {input.temperament.length === 0 ? <p className="error">{error.temperament}</p> : <h4 className="h4-temperaments">Temperamentos checkeados: </h4>}
                     {input.temperament.length > 0 ? input.temperament.map(e =>
                         <h4 className="h4-temperaments" key={e}>{e}, </h4>
                     ) : []}
 
 
+
                 </div>
 
-                {input.breed === "" ?
-                    <p className="error">{error.breed}</p> : ""
-                }
                 <button className="button" type="submit" id="button"> Crea a tu perro </button>
             </form>
         </div>

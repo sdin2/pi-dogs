@@ -11,17 +11,21 @@ export default function Detail() {
     const dispatch = useDispatch()
     const { id } = useParams()
 
+
     useEffect(() => {
         dispatch(getDogById(id))
     }, [dispatch])
 
-    const perroId = useSelector((state) => state.detail)
+
+    let perroId = useSelector((state) => state.detail)
+
 
     return (
         <div className="cardCointainer">
             <div>
                 <Link to="/home"><button>Volver atras</button></Link>
             </div>
+
             <div className="card">
                 <h3>{perroId.name}</h3>
                 <img src={perroId.image} alt="image" className="image" />

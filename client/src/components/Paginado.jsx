@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Paginado({ dogsPerPage, allDogs, paginado, currentPage }) {
+export default function Paginado({ dogsPerPage, allDogs, paginado }) {
     const pageNumbers = []
     if (typeof allDogs === "object") {
         for (let i = 1; i <= Math.ceil(allDogs.length / dogsPerPage); i++) {

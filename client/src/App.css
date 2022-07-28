@@ -12,6 +12,11 @@
   flex-wrap: wrap;
 }
 
+.navlink {
+  text-decoration: none;
+  color: black
+}
+
 .image {
   max-height: 50%;
 }
@@ -47,7 +52,7 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-left: 1%;
-
+  text-decoration: none;
 }
 
 .cardsgrid:link {
@@ -69,6 +74,8 @@
   margin-bottom: 10%;
   height: 550px;
   font-size: large;
+  text-decoration: none;
+
 }
 
 .cards:link {
@@ -100,6 +107,7 @@
 }
 
 .cardCointainer {
+  text-decoration: none;
   position: relative;
   display: flex;
   flex-direction: column;
