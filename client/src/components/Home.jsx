@@ -37,11 +37,15 @@ export default function Home() {
 
     function handleFilterTemps(e) {
         dispatch(filterByTemp(e.target.value))
+        document.getElementById("apiFilter").selectedIndex = 0
+        document.getElementById("breedFilter").selectedIndex = 0
         setCurrentPage(1)
     }
     function handleFilterBreeds(e) {
         dispatch(filterByBreed(e.target.value))
         setCurrentPage(1)
+        document.getElementById("apiFilter").selectedIndex = 0
+        document.getElementById("tempFilter").selectedIndex = 0
     }
 
     function handleOrderName(e) {
@@ -66,23 +70,18 @@ export default function Home() {
 
     return (
         <div>
-            <NavLink to="/dogcreate"><button>crear un nuevo perro</button></NavLink>
+            <NavLink to="/dogcreate"><button className="button-create">Crear un nuevo perro</button></NavLink>
             <h1>Busca a tu perro</h1>
-            <button onClick={e => { handleClick(e) }}>
-                Resetear filtros
-            </button>
 
-            <SearchBar />
 
             <form id="form">
-
-                <select onChange={e => handleFilterApiBd(e)}>
+                <select id="apiFilter" onChange={e => handleFilterApiBd(e)}>
                     <option hidden>Filtrar por api o Base de datos</option>
                     <option value="all">Todo</option>
                     <option value="api">Api</option>
                     <option value="BD">Base de datos</option>
                 </select>
-                <select onChange={e => handleFilterTemps(e)}>
+                <select id="tempFilter" onChange={e => handleFilterTemps(e)}>
                     <option hidden>Filtrar por temperamento</option>
                     <option value="all">Todos los temperamentos</option>
                     <option value="Sin definir">Sin definir</option>
@@ -95,7 +94,7 @@ export default function Home() {
                     })
                     }
                 </select>
-                <select onChange={e => handleFilterBreeds(e)}>
+                <select id="breedFilter" onChange={e => handleFilterBreeds(e)}>
                     <option hidden>Filtrar por raza</option>
                     <option value="all">Todas las razas</option>
                     <option value="Sin definir">Sin definir</option>
@@ -114,9 +113,13 @@ export default function Home() {
                     <option value="desc">Z-A</option>
                 </select>
             </form>
+            <button onClick={e => { handleClick(e) }} className="button-reset">
+                Resetear filtros
+            </button>
             <div>
                 <Paginado dogsPerPage={dogsPerPage} allDogs={allDogs} paginado={paginado} />
             </div>
+            <SearchBar />
             <div className="cardsgrid">
                 {
                     typeof currentDogs === "object" ? currentDogs.map(e => {

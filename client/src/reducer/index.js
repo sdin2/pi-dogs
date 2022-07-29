@@ -86,12 +86,12 @@ function rootReducer (state=inicialState, action){
             // let d=pushflat.flat(1)
             let orderByPeso = action.payload === "weight asc" ? state.dogs.sort(function(b,a) {
                 if (a.weightmax!=="No hay datos" && b.weightmax!=="No hay datos"){return (b.weightmax - a.weightmax)}
-                else if (a==="No hay datos" || b==="No hay datos") { return -1}
+                else if (a.weightmax==="No hay datos" || b.weightmax==="No hay datos") { return -1}
                 return 0
                 // a.weightmax!="No hay datos" && b.weightmax!="No hay datos" ? a.weightmax - b.weightmax : a!=="No hay datos"? a.weightmax : b.weightmax
             }) : state.dogs.sort(function(a,b) {
                 if (a.weightmax!=="No hay datos" && b.weightmax!=="No hay datos"){return (b.weightmax - a.weightmax)}
-                else if (a==="No hay datos" || b==="No hay datos") { return -1}
+                else if (a.weightmax==="No hay datos" || b.weightmax==="No hay datos") { return -1}
                 return 0
                 // a.weightmax!="No hay datos" && b.weightmax!="No hay datos" ? b.weightmax - a.weightmax : a!=="No hay datos"? a.weightmax : b.weightmax 
             }) 

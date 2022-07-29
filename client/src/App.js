@@ -14,7 +14,6 @@ import React from 'react';
 function App() {
   return (
      <div className="App">
-      <h1>Henry Dogs</h1>
       <Routes>
         <Route path="/" element={<LandingPage/>}/>
         <Route path="/home" element={<Home/>}/>

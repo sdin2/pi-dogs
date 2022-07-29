@@ -17,7 +17,7 @@ function SearchBar() {
         dispatch(searchBarsearch(e.target.value))
     }
     return (
-        <form id="searchBar" onSubmit={e => handleSubmit(e)}>
+        <form id="searchBar" onSubmit={e => handleSubmit(e)} >
             <input type="text" placeholder='escribe aqui' onChange={handleOnChange} className="input" />
             <button type='submit'>buscar</button>
         </form>

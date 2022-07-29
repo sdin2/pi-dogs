@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { getTemperaments, getBreeds, postDogs, getDogs } from "../actions";
 import { useNavigate } from 'react-router-dom';
 
-let re1 = new RegExp("[0-9!·$%&/()=?¿´ç`+-.<>+-@|#~€¬}]");
+let re1 = new RegExp("[0-9!·$%&/()=?¿´ç`+-.<>@|#~€¬}]");
 let re2 = new RegExp("[a-zA-Z!·$%&/()=?¿´ç`+-.<>@|#~€¬}]");
 
 
@@ -56,6 +56,8 @@ function validate(input) {
     return error
 }
 
+
+
 export default function DogCreate() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -84,8 +86,6 @@ export default function DogCreate() {
 
 
     function handleOnchange(e) {
-        const button = document.getElementById('button')
-
         setInput({
             ...input,
             [e.target.name]: e.target.value
@@ -171,7 +171,7 @@ export default function DogCreate() {
         }) : setInput({
             ...input,
             temperament: input.temperament.filter(b => e.target.value !== b)
-        });
+        })
         setError(validate({
             ...input,
             temperament: e.target.value
@@ -198,13 +198,15 @@ export default function DogCreate() {
         }
     }
 
+    let button = document.getElementsByClassName("button")
+
     function handleSubmit(e) {
         e.preventDefault(e)
-        if (input.name === "" || input.heightmax === "" || input.heightmin === "" || input.weightmax === "" || input.weightmin === "" ||
-            input.temperament.length === 0 || input.breed === "") {
-            alert("hay campos vacios")
+        if (input.name === "" || input.heightmax === "" || input.heightmin === "" || input.weightmax === "" || input.weightmin === "" || input.temperament.length === 0 || input.breed === "") {
+            button.disabled = true
         }
         else {
+            button.disabled = false
             dispatch(postDogs(input))
             alert("Perro creado correctamente")
             let radio = document.querySelectorAll("input[type='radio']")
@@ -235,9 +237,12 @@ export default function DogCreate() {
 
 
     return (
-        <div>
+        <div className="dogCreate">
             <Link to="/home"><button className="button">Volver</button></Link>
-            <h1>Creá a tu perro</h1>
+            <div className="container-dogCreate">
+                <h1 className="h1-dogCreate">Creá a tu perro</h1>
+                <img src="https://i.gifer.com/origin/52/52e4bb28d095ff93d3a4019d43d628bc.gif" className="image-dog" />
+            </div>
             <h4>Los campos con * son obligatorios</h4>
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="cointainer3">
@@ -250,7 +255,7 @@ export default function DogCreate() {
                     <label className="label">Imagen: </label>
                     <input className="input" type="text" value={input.image} name="image" onChange={(e) => handleOnchange(e)} />
 
-                    <label className="label">*Altura maxima: <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.heightmax} name="heightmax" onChange={(e) => handleOnchange(e)} />  cm</label>
+                    <label className="label">*Altura maxima: <input className="input" type="number" min="1" pattern="[0-9]{1,}" value={input.heightmax} name="heightmax" onChange={(e) => handleOnchange(e)} />  cm</label>
                     {error.heightmax &&
                         <p className="error">{error.heightmax}</p>
                     }
@@ -259,18 +264,17 @@ export default function DogCreate() {
                     {error.heightmin &&
                         <p className="error">{error.heightmin}</p>
                     }
-                    <label className="label">*Peso maximo: <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.weightmax} name="weightmax" onChange={(e) => handleOnchange(e)} /> kg</label>
+                    <label className="label">*Peso maximo: <input className="input" type="number" min="1" pattern="[0-9]{1,}" value={input.weightmax} name="weightmax" onChange={(e) => handleOnchange(e)} /> kg</label>
                     {error.weightmax &&
                         <p className="error">{error.weightmax}</p>
                     }
 
-                    <label className="label"> *Peso minimo:  <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.weightmin} name="weightmin" onChange={(e) => handleOnchange(e)} /> kg</label>
+                    <label className="label"> *Peso minimo: <input className="input" type="number" min="0" pattern="[0-9]{1,}" value={input.weightmin} name="weightmin" onChange={(e) => handleOnchange(e)} /> kg</label>
                     {error.weightmin &&
                         <p className="error">{error.weightmin}</p>
                     }
 
-                    <label className="label">Años de vida:
-                        <input className="input" type="text" value={input.life_span} name="life_span" onChange={(e) => handleOnchange(e)} />  años</label>
+                    <label className="label">Años de vida: <input className="input" type="text" value={input.life_span} name="life_span" onChange={(e) => handleOnchange(e)} />  años</label>
                 </div>
                 <div className="cointainer2">
                     <div className="container">

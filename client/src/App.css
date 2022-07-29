@@ -1,3 +1,103 @@
+.container-dogCreate {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.image-dog {
+  width: 8%;
+}
+
+.h1-dogCreate {
+  position: relative;
+  padding-top: 2%;
+  padding-left: 3%;
+}
+
+.button-reset {
+  justify-content: center;
+  margin-top: 4%;
+  border: 2px solid rgb(47, 47, 47);
+  color: rgb(51, 50, 50);
+  border-radius: 50px;
+  padding: 15px 80px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-family: 'Shalimar', cursive;
+}
+
+.button-reset:hover {
+  color: rgb(0, 0, 0);
+  background-color: aqua;
+  transition: all 3s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0 0 10px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64), 0 0 50px rgb(21, 115, 42);
+
+}
+
+.button-create {
+
+  margin-top: 10%;
+  border: 2px solid rgb(47, 47, 47);
+  color: rgb(51, 50, 50);
+  border-radius: 50px;
+  padding: 15px 80px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-family: 'Shalimar', cursive;
+}
+
+.button-create:hover {
+  color: rgb(0, 0, 0);
+  background-color: aqua;
+  transition: all 3s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0 0 10px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64), 0 0 50px rgb(21, 115, 42);
+
+}
+
+.button-landing {
+  margin-top: 2%;
+  border: 2px solid #fff;
+  color: rgb(51, 48, 48);
+  border-radius: 50px;
+  padding: 15px 80px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(-50%);
+  font-size: large;
+  font-family: 'Shalimar', cursive;
+}
+
+.button-landing:hover {
+  color: rgb(0, 0, 0);
+  background-color: aqua;
+  transition: all 3s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0 0 20px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64), 0 0 50px rgb(21, 115, 42);
+
+}
+
+.title {
+  font-size: 50px;
+  margin: 0%;
+  position: relative;
+  padding: 50px 80px;
+}
+
+.landing {
+  background-image: url("https://c.tenor.com/GRHeBp2VRJgAAAAC/good-morning-waking-up.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
 .container {
   border: 2px solid #ccc;
   width: 300px;
@@ -8,7 +108,6 @@
   text-align: start;
   font-family: 'Pacifico', cursive;
   font-family: 'Shalimar', cursive;
-  display: flex;
   flex-wrap: wrap;
 }
 
@@ -46,18 +145,16 @@
   font-family: 'Shalimar', cursive;
 }
 
+
+
 .cardsgrid {
   text-decoration: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin-left: 1%;
-  text-decoration: none;
 }
 
-.cardsgrid:link {
-  text-decoration: none;
-}
 
 .cards {
   margin-right: 25px;
@@ -69,17 +166,11 @@
   overflow: hidden;
   font-family: 'Pacifico', cursive;
   font-family: 'Shalimar', cursive;
-  text-decoration: none;
-  text-decoration-line: none;
   margin-bottom: 10%;
   height: 550px;
   font-size: large;
   text-decoration: none;
 
-}
-
-.cards:link {
-  text-decoration: none;
 }
 
 .cards:hover {
@@ -132,13 +223,12 @@
 } */
 
 .paginado {
+  margin-bottom: 1%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   text-align: center;
-  font-family: 'Pacifico', cursive;
   font-family: 'Shalimar', cursive;
-  margin-top: 2%;
-  margin-bottom: 2%;
   align-items: center;
   justify-content: center;
 }
@@ -163,14 +253,6 @@
   box-shadow: 0 0 20px rgb(148, 217, 217), 0 0 20px rgb(192, 171, 217), 0 0 50px rgb(191, 236, 201);
 
 }
-
-
-
-.number:active {
-  box-shadow: 0 0 20px rgb(255, 0, 0), 0 0 20px rgb(255, 0, 0), 0 0 50px rgb(255, 0, 0);
-
-}
-
 
 .number:hover {
   box-shadow: 0 0 20px rgb(11, 200, 200), 0 0 20px rgb(88, 18, 174), 0 0 50px rgb(21, 115, 42);
@@ -217,10 +299,15 @@
   font-family: 'Shalimar', cursive;
   box-shadow: 0 0 20px rgb(221, 10, 10), 0 0 20px rgb(88, 18, 174), 0 0 50px rgb(21, 115, 42);
 
+
 }
+
+
 
 .App {
   text-align: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .App-logo {
