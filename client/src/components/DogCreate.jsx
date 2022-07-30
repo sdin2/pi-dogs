@@ -238,11 +238,11 @@ export default function DogCreate() {
 
     return (
         <div className="dogCreate">
-            <Link to="/home"><button className="button">Volver</button></Link>
             <div className="container-dogCreate">
                 <h1 className="h1-dogCreate">Creá a tu perro</h1>
                 <img src="https://i.gifer.com/origin/52/52e4bb28d095ff93d3a4019d43d628bc.gif" className="image-dog" />
             </div>
+            <Link to="/home"><button className="button">Volver</button></Link>
             <h4>Los campos con * son obligatorios</h4>
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="cointainer3">
@@ -305,22 +305,17 @@ export default function DogCreate() {
                     </div>
                     <button onClick={e => handleUncheck(e)} className="button-clenser">Limpiar temperamentos</button>
                 </div>
-                <div>
+                <div className="temperaments">
                     {input.breed === "" ?
-                        <p className="error">{error.breed}</p> : <p>raza : {input.breed}</p>
+                        <p className="error">{error.breed}</p> : <h4 className="h4-temperaments">raza : {input.breed}</h4>
                     }
                 </div>
                 <div className="temperaments">
-
                     {input.temperament.length === 0 ? <p className="error">{error.temperament}</p> : <h4 className="h4-temperaments">Temperamentos checkeados: </h4>}
                     {input.temperament.length > 0 ? input.temperament.map(e =>
                         <h4 className="h4-temperaments" key={e}>{e}, </h4>
-                    ) : []}
-
-
-
+                    ) : false}
                 </div>
-
                 <button className="button" type="submit" id="button"> Crea a tu perro </button>
             </form>
         </div>

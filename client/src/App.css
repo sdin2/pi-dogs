@@ -1,3 +1,14 @@
+.error {
+  color: red;
+
+}
+
+.dogCreate {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
 .container-dogCreate {
   display: flex;
   flex-direction: row;
@@ -133,12 +144,16 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  object-fit: cover;
 }
 
 .h4-temperaments {
   margin-left: 0.25%;
-  margin-bottom: 0%;
+  margin-top: 0%;
+
 }
+
+
 
 .button-clenser {
   font-family: 'Pacifico', cursive;
@@ -278,8 +293,6 @@
 }
 
 .button {
-  margin-top: 2%;
-  margin-bottom: 2%;
   display: flex;
   width: 50px;
   height: 50px;
@@ -298,8 +311,6 @@
   font-family: 'Pacifico', cursive;
   font-family: 'Shalimar', cursive;
   box-shadow: 0 0 20px rgb(221, 10, 10), 0 0 20px rgb(88, 18, 174), 0 0 50px rgb(21, 115, 42);
-
-
 }
 
 
