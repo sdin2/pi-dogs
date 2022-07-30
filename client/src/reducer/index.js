@@ -126,17 +126,22 @@ function rootReducer (state=inicialState, action){
                 dogs:filterCreated
             }
             case "SEARCH_BAR_BREED":
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                 ...state,
                 dogs: action.payload==="" ? state.allDogs: action.payload
             }
             case "SEARCH_BAR_TEMP":
-                console.log(action.payload)
+                // console.log(action.payload)
                 return {
                 ...state,
                 dogs: action.payload==="" ? state.allDogs: action.payload
             }
+            case "SEARCH_TEMPS":
+                return{
+                    ...state,
+                    temps: action.payload
+                }
           
     default:
     return state;
