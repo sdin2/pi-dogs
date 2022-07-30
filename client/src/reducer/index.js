@@ -10,6 +10,7 @@ const inicialState = {
 function rootReducer (state=inicialState, action){
     switch(action.type){
         case "GET_DOGS":
+            
             return{
                 ...state,
                 dogs:action.payload,
@@ -108,6 +109,10 @@ function rootReducer (state=inicialState, action){
                 return {
                     ...state
                 }
+            case "POST_TEMP":
+                return{
+                    ...state
+                }
             case "GET_DOG_ID":
                 console.log(action.payload,"3")
                 return{
@@ -119,6 +124,18 @@ function rootReducer (state=inicialState, action){
             return{
                 ...state,
                 dogs:filterCreated
+            }
+            case "SEARCH_BAR_BREED":
+                console.log(action.payload)
+                return {
+                ...state,
+                dogs: action.payload==="" ? state.allDogs: action.payload
+            }
+            case "SEARCH_BAR_TEMP":
+                console.log(action.payload)
+                return {
+                ...state,
+                dogs: action.payload==="" ? state.allDogs: action.payload
             }
           
     default:

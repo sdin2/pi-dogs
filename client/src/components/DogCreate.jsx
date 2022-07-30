@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { Link } from "react-router-dom";
-import { getTemperaments, getBreeds, postDogs, getDogs } from "../actions";
+import { getTemperaments, getBreeds, postDogs, getDogs, searchTemps, tempCreate } from "../actions";
 import { useNavigate } from 'react-router-dom';
 
 let re1 = new RegExp("[0-9!·$%&/()=?¿´ç`+-.<>@|#~€¬}]");
@@ -62,7 +62,10 @@ export default function DogCreate() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const breeds = useSelector((state) => state.allbreeds)
-    const temperament = useSelector((state) => state.temps)
+    let temperament = useSelector((state) => state.temps)
+    let temperamentPush = []
+    temperamentPush.push(temperament)
+    temperamentPush = temperamentPush.flat(1)
     const [render, setRender] = useState("")
     const [error, setError] = useState({})
     const [input, setInput] = useState({
@@ -234,7 +237,9 @@ export default function DogCreate() {
             // navigate('/home');
         }
     }
-
+    function handleOnchangeTemperamentSearch(e) {
+        dispatch(searchTemps(e.target.value))
+    }
 
     return (
         <div className="dogCreate">
@@ -291,9 +296,9 @@ export default function DogCreate() {
                     </div>
                     <div className="container">
                         <label>*Temperamentos: </label>
-
+                        <input placeholder="busca un temperamento" onChange={e => handleOnchangeTemperamentSearch(e)}></input>
                         {
-                            temperament.map(e => {
+                            temperamentPush.map(e => {
                                 return (
                                     <label key={e.id}><input type="checkbox" value={e.name} name={e.name} onChange={(e) => handleSelect(e)} />{e.name}</label>
                                 )

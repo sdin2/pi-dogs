@@ -23,21 +23,5 @@ router.get('/', async (req, res) => {
     }
 })
 
-// router.post("/",async(req,res)=>{
-//     try{
-//     let {temperament,id}=req.body
-//     let temperamentDB= await Temp.findAll({
-//         where: {name : temperament}
-//       })
-//       let tempCreate = await Temp.Create ({temperament,id})
-//       tempCreate.addTemp(temperamentDB)
-//     res.send("completado")
-//     }
-//     catch (error) {
-//         console.error(error);
-//         return ([])
-//     }
-// })
-
 
 module.exports = router;

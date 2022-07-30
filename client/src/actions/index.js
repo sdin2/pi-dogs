@@ -66,6 +66,8 @@ export function orderByPeso(payload){
     }
 }
 
+
+
 export function searchBarsearch(payload){
 // console.log(payload)
     return async function(dispatch){
@@ -84,6 +86,63 @@ export function searchBarsearch(payload){
             
         }
     }
+}
+
+export function searchBarsearchBreed(payload){
+    // console.log(payload)
+        return async function(dispatch){
+            try {
+                const json = await axios.get(`http://localhost:3001/dog`);
+                let dogsBreed= json.data.filter(e=>e.breed.toLowerCase().includes(payload.toLowerCase()))
+                // console.log(json.data)
+                return dispatch({
+                    type:"SEARCH_BAR_BREED",
+                    payload:dogsBreed
+                })
+            } catch (error) {
+                return dispatch({
+                type: "SEARCH_BAR_BREED",
+                payload: "No se encontro ese perro"
+                })
+                
+            }
+        }
+    }
+
+    export function searchBarsearchTemp(payload){
+        // console.log(payload)
+            return async function(dispatch){
+                try {
+                    const json = await axios.get(`http://localhost:3001/dog`);
+                    let dogsTemp= json.data.filter(e=>e.temperament.toLowerCase().includes(payload.toLowerCase()))
+                    console.log(dogsTemp)
+                    
+                    // .includes(payload))
+                    // console.log(json.data)
+                    return dispatch({
+                        type:"SEARCH_BAR_TEMP",
+                        payload:dogsTemp
+                    })
+                } catch (error) {
+                    return dispatch({
+                    type: "SEARCH_BAR_TEMP",
+                    payload: "No se encontro ese perro"
+                    })
+                    
+                }
+            }
+        }
+
+
+export function searchTemps(payload) {
+    return async function(dispatch){
+        const json = await axios.get("http://localhost:3001/temperament");
+        const json2=payload==="" ? json.data : json.data.filter(e=>e.name.toLowerCase().includes(payload.toLowerCase())) 
+        console.log(json2)
+        return dispatch({
+        type: "SEARCH_TEMPS",
+        payload:json2
+    })}
 }
 
 export function postDogs(payload){
@@ -149,7 +208,7 @@ export function postDogs(payload){
     
 
         const json = await axios.post("http://localhost:3001/dog", payload)
-        console.log(json)
+        // console.log(json)
         return json
     }
 }
