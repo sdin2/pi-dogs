@@ -22,11 +22,9 @@ export default function Detail() {
 
     return (
         <div className="cardCointainer">
-            <div>
-                <Link to="/home"><button>Volver atras</button></Link>
-            </div>
+            <Link to="/home" ><button className="button-details">Volver atras</button></Link>
 
-            <div className="card">
+            <div className="card" >
                 <h3>{perroId.name}</h3>
                 <img src={perroId.image} alt="image" className="image" />
                 <h5>{perroId.image === "https://j.gifs.com/ygdY27.gif" ? "Perrito llorando porque no se subió una imagen" : ""}</h5>

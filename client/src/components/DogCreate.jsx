@@ -247,7 +247,7 @@ export default function DogCreate() {
                 <h1 className="h1-dogCreate">Creá a tu perro</h1>
                 <img src="https://i.gifer.com/origin/52/52e4bb28d095ff93d3a4019d43d628bc.gif" className="image-dog" />
             </div>
-            <Link to="/home"><button className="button">Volver</button></Link>
+            <Link to="/home" className="navlink"><button className="button">Volver</button></Link>
             <h4>Los campos con * son obligatorios</h4>
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="cointainer3">
