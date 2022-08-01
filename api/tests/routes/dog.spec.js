@@ -13,49 +13,49 @@ describe("Dogs routes", () => {
     })
   )
 
-describe('/dogs', function() {
+describe('/dog', function() {
   it('GET respons with status 200', function(){
     return agent
-      .get('/dogs')
+      .get('/dog')
       .expect(function(res){
         expect(res.status).equal(200)})
   }).timeout(10000)
   it('Elements received are Object type',  function() {
     return agent 
-      .get('/dogs') 
+      .get('/dog') 
       .expect(function(res) {
         expect(typeof res.body[0]).equal('object'); 
       });
   }).timeout(10000)
 })
-describe('/dogs?name=', function() {
+describe('/dog?name=', function() {
   it('GET respons with status 200 with a name URL with mixed camel case', function() {
     return agent 
-      .get('/dogs?name=TeRRiEr') 
+      .get('/dog?name=TeRRiEr') 
       .expect(function(res){
         expect(res.status).equal(200)}); 
       }).timeout(10000)
   it('GET receives a body lenght larger if there is query coincidences',  function() {
     return agent 
-      .get('/dogs?name=toy') 
+      .get('/dog?name=toy') 
       .expect(function(res) {
         expect(res.body.length).equal(5); 
       });
   }).timeout(3000)
 })
-describe('/dogs/:id', function() {
+describe('/dog/:id', function() {
   it('GET responses with status 200 if a dog is found',  function() {
     return agent 
-      .get('/dogs/13') 
+      .get('/dog/13') 
       .expect(function(res){
         expect(res.status).equal(200)}); 
       }).timeout(10000);
   it('GET gets dog data by the :id as a parameter',  function() {
     return agent 
-      .get('/dogs/13')
+      .get('/dog/13')
       .expect(function(res) {
-        expect(res.body.name).equal('American Eskimo Dog (Miniature)'); 
-      });
+        expect(res.body[0].name).equal('American Eskimo Dog (Miniature)'); 
+      }); 
   }).timeout(10000)
 })
 describe('/temperament', function() {
