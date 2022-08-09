@@ -153,11 +153,11 @@ export default function DogCreate() {
         }
         else {
             // console.log(e.target.value)
-            let nameMayusc = e.target.value.split("")
+            let nameMayusc = e.target.value.toLowerCase().split("")
             nameMayusc[0] = nameMayusc[0].toUpperCase()
             e.target.value = nameMayusc.join("")
             let randomKey = Math.random()
-            temperament.filter(b => b.name === e.target.value).length === 0 ? temperament.push({ name: e.target.value, id: randomKey })
+            temperament.filter(b => b.name.toLowerCase() === e.target.value.toLowerCase()).length === 0 ? temperament.push({ name: e.target.value, id: randomKey })
                 : e.target.value = ""
             setRender({
                 randomKey
