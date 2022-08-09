@@ -1,6 +1,5 @@
 .error {
   color: red;
-
 }
 
 .dogCreate {
@@ -9,12 +8,18 @@
   align-items: center;
 }
 
+.text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .container-dogCreate {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 .image-dog {
@@ -28,6 +33,7 @@
 }
 
 .button-reset {
+  cursor: pointer;
   justify-content: center;
   margin-top: 4%;
   border: 2px solid rgb(47, 47, 47);
@@ -38,19 +44,25 @@
   position: relative;
   overflow: hidden;
   transform: translateY(-50%);
-  font-family: 'Shalimar', cursive;
+  font-family: "Shalimar", cursive;
 }
 
-.button-reset:hover {
+.button-reset:active {
+  color: rgb(255, 255, 255);
+  background-color: black;
+}
+
+/* .button-reset:hover {
   color: rgb(0, 0, 0);
   background-color: aqua;
   transition: all 3s cubic-bezier(0.175, 0.885, 0, 1);
   box-shadow: 0 0 10px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64), 0 0 50px rgb(21, 115, 42);
 
-}
+
+} */
 
 .button-create {
-
+  cursor: pointer;
   margin-top: 10%;
   border: 2px solid rgb(47, 47, 47);
   color: rgb(51, 50, 50);
@@ -60,18 +72,19 @@
   position: relative;
   overflow: hidden;
   transform: translateY(-50%);
-  font-family: 'Shalimar', cursive;
+  font-family: "Shalimar", cursive;
 }
 
 .button-create:hover {
   color: rgb(0, 0, 0);
   background-color: aqua;
   transition: all 3s cubic-bezier(0.175, 0.885, 0, 1);
-  box-shadow: 0 0 10px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64), 0 0 50px rgb(21, 115, 42);
-
+  box-shadow: 0 0 10px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64),
+    0 0 50px rgb(21, 115, 42);
 }
 
 .button-details {
+  cursor: pointer;
   padding-top: 200px;
   margin-top: 50%;
   border: 2px solid rgb(28, 27, 27);
@@ -83,18 +96,19 @@
   overflow: hidden;
   transform: translateY(-50%);
   font-size: large;
-  font-family: 'Shalimar', cursive;
+  font-family: "Shalimar", cursive;
 }
 
 .button-details:hover {
   color: rgb(0, 0, 0);
   background-color: aqua;
   transition: all 5s cubic-bezier(0.175, 0.885, 0, 1);
-  box-shadow: 0 0 20px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64), 0 0 50px rgb(21, 115, 42);
-
+  box-shadow: 0 0 20px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64),
+    0 0 50px rgb(21, 115, 42);
 }
 
 .button-landing {
+  cursor: pointer;
   margin-top: 2%;
   border: 2px solid #fff;
   color: rgb(51, 48, 48);
@@ -105,15 +119,15 @@
   overflow: hidden;
   transform: translateY(-50%);
   font-size: large;
-  font-family: 'Shalimar', cursive;
+  font-family: "Shalimar", cursive;
 }
 
 .button-landing:hover {
   color: rgb(0, 0, 0);
   background-color: aqua;
   transition: all 3s cubic-bezier(0.175, 0.885, 0, 1);
-  box-shadow: 0 0 20px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64), 0 0 50px rgb(21, 115, 42);
-
+  box-shadow: 0 0 20px rgb(8, 21, 210), 0 0 20px rgb(24, 100, 64),
+    0 0 50px rgb(21, 115, 42);
 }
 
 .title {
@@ -140,14 +154,14 @@
   display: flex;
   flex-direction: column;
   text-align: start;
-  font-family: 'Pacifico', cursive;
-  font-family: 'Shalimar', cursive;
+  font-family: "Pacifico", cursive;
+  font-family: "Shalimar", cursive;
   flex-wrap: wrap;
 }
 
 .navlink {
   text-decoration: none;
-  color: black
+  color: black;
 }
 
 .image {
@@ -156,7 +170,7 @@
 
 .image-dog:hover {
   transition: all 10s cubic-bezier(0.175, 0.885, 0, 1);
-  transform: scale(3, 3)
+  transform: scale(3, 3);
 }
 
 .cointainer2 {
@@ -164,7 +178,7 @@
   flex-wrap: wrap;
   margin-top: 1%;
   flex-direction: row;
-  margin-left: 25%
+  margin-left: 25%;
 }
 
 .temperaments {
@@ -178,17 +192,13 @@
 .h4-temperaments {
   margin-left: 0.25%;
   margin-top: 0%;
-
 }
-
-
 
 .button-clenser {
-  font-family: 'Pacifico', cursive;
-  font-family: 'Shalimar', cursive;
+  cursor: pointer;
+  font-family: "Pacifico", cursive;
+  font-family: "Shalimar", cursive;
 }
-
-
 
 .cardsgrid {
   text-decoration: none;
@@ -198,38 +208,38 @@
   margin-left: 1%;
 }
 
-
 .cards {
   margin-right: 25px;
-  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   background-color: rgb(208, 198, 198);
   width: 350px;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  font-family: 'Pacifico', cursive;
-  font-family: 'Shalimar', cursive;
+  font-family: "Pacifico", cursive;
+  font-family: "Shalimar", cursive;
   margin-bottom: 10%;
   height: 550px;
   font-size: large;
   text-decoration: none;
-
 }
 
 .cards:hover {
-  box-shadow: 0 0 20px rgb(52, 15, 101), 0 0 20px rgb(9, 168, 203), 0 0 50px rgb(21, 115, 42);
-  transform: scale(1.10, 1.10) !important
+  box-shadow: 0 0 20px rgb(52, 15, 101), 0 0 20px rgb(9, 168, 203),
+    0 0 50px rgb(21, 115, 42);
+  transform: scale(1.1, 1.1);
 }
 
 .card {
-  box-shadow: 0 0 20px rgb(52, 15, 101), 0 0 20px rgb(9, 168, 203), 0 0 50px rgb(21, 115, 42);
+  box-shadow: 0 0 20px rgb(52, 15, 101), 0 0 20px rgb(9, 168, 203),
+    0 0 50px rgb(21, 115, 42);
   margin-right: 25px;
-  transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   background-color: rgb(208, 198, 198);
   width: 600px;
   height: 700px;
-  font-family: 'Pacifico', cursive;
-  font-family: 'Shalimar', cursive;
+  font-family: "Pacifico", cursive;
+  font-family: "Shalimar", cursive;
   text-decoration: none;
   text-decoration-line: none;
   margin-bottom: 10%;
@@ -247,7 +257,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
 }
 
 /* .card {
@@ -266,17 +275,31 @@
 } */
 
 .paginado {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
   margin-bottom: 1%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   text-align: center;
-  font-family: 'Shalimar', cursive;
+  font-family: "Shalimar", cursive;
   align-items: center;
   justify-content: center;
 }
 
 .number {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
   margin-top: 2%;
   margin-bottom: 2%;
   display: flex;
@@ -291,15 +314,20 @@
   border-radius: 100%;
   font-size: 15px;
   cursor: pointer;
-  font-family: 'Pacifico', cursive;
-  font-family: 'Shalimar', cursive;
-  box-shadow: 0 0 20px rgb(148, 217, 217), 0 0 20px rgb(192, 171, 217), 0 0 50px rgb(191, 236, 201);
-
+  font-family: "Pacifico", cursive;
+  font-family: "Shalimar", cursive;
+  box-shadow: 0 0 20px rgb(148, 217, 217), 0 0 20px rgb(192, 171, 217),
+    0 0 50px rgb(191, 236, 201);
 }
 
 .number:hover {
-  box-shadow: 0 0 20px rgb(11, 200, 200), 0 0 20px rgb(88, 18, 174), 0 0 50px rgb(21, 115, 42);
+  box-shadow: 0 0 20px rgb(11, 200, 200), 0 0 20px rgb(88, 18, 174),
+    0 0 50px rgb(21, 115, 42);
+}
 
+.number:active {
+  background: rgb(11, 200, 200);
+  color: black;
 }
 
 .cointainer3 {
@@ -313,15 +341,16 @@
 .input {
   border-radius: 999cm;
   margin-bottom: 1%;
-  margin-top: 1%
+  margin-top: 1%;
 }
 
 .label {
-  font-family: 'Pacifico', cursive;
-  font-family: 'Shalimar', cursive;
+  font-family: "Pacifico", cursive;
+  font-family: "Shalimar", cursive;
 }
 
 .button {
+  cursor: pointer;
   display: flex;
   width: 50px;
   height: 50px;
@@ -337,17 +366,17 @@
   font-size: 18px;
   cursor: pointer;
   margin-left: 46%;
-  font-family: 'Pacifico', cursive;
-  font-family: 'Shalimar', cursive;
+  font-family: "Pacifico", cursive;
+  font-family: "Shalimar", cursive;
   text-decoration: none;
 }
 
 .button:hover {
-  box-shadow: 0 0 20px rgb(221, 10, 10), 0 0 20px rgb(88, 18, 174), 0 0 50px rgb(21, 115, 42);
-  transform: scale(1.30, 1.30);
+  box-shadow: 0 0 20px rgb(221, 10, 10), 0 0 20px rgb(88, 18, 174),
+    0 0 50px rgb(21, 115, 42);
+  transform: scale(1.3, 1.3);
   transition: all 3s cubic-bezier(0.175, 0.885, 0, 1);
 }
-
 
 .App {
   text-align: center;

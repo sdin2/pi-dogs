@@ -26,7 +26,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    weightmin:{
+    weightmin: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -39,17 +39,17 @@ module.exports = (sequelize) => {
       allowNull: false,
       defaultValue: true,
     },
-    breed:{
-      type:DataTypes.STRING,
+    breed: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
-    image:{
-      type:DataTypes.STRING,
+    image: {
+      type: DataTypes.STRING,
       allowNull: true,
     },
-    temperament:{
-      type:DataTypes.JSON,
-      allowNull:false
-    }
+    temperament: {
+      type: DataTypes.JSON,
+      allowNull: false,
+    },
   });
 };

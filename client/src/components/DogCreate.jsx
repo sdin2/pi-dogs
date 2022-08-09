@@ -192,13 +192,13 @@ export default function DogCreate() {
         // console.log(checkBox)
         for (let i = 0; i < checkBox.length; i++) {
             if (checkBox[i].checked === true) {
-                setInput({
-                    ...input,
-                    temperament: []
-                })
                 checkBox[i].checked = false
             }
         }
+        setInput({
+            ...input,
+            temperament: []
+        })
     }
 
     let button = document.getElementsByClassName("button")

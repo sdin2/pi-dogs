@@ -141,6 +141,12 @@ function rootReducer (state=inicialState, action){
                 return{
                     ...state,
                     temps: action.payload
+            }
+            case "NO_AGRESSIVES":
+            let dogsAgresive = action.payload==="All"? state.allDogs : state.allDogs.filter(e=>!e.temperament.includes("Aggressive"))
+            return{
+                    ...state,
+                    dogs:dogsAgresive 
                 }
           
     default:

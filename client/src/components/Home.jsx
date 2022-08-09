@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { getDogs, getTemperaments, filterByTemp, getBreeds, filterByBreed, orderByName, orderByPeso, filterApiBd } from "../actions";
+import { getDogs, getTemperaments, filterByTemp, getBreeds, filterByBreed, orderByName, orderByPeso, filterApiBd, delAgresives } from "../actions";
 import { NavLink } from "react-router-dom"
 import SearchBar from "./SearchBar";
 import Paginado from "./Paginado";
@@ -66,6 +66,11 @@ export default function Home() {
         setCurrentPage(1)
     }
 
+    function handleAgressive(e) {
+        e.preventDefault()
+        dispatch(delAgresives(e.target.value))
+        setCurrentPage(1)
+    }
 
 
     return (
@@ -101,6 +106,11 @@ export default function Home() {
                     {allBreds && allBreds.map(e => {
                         return (<option value={e} key={e}>{e}</option>)
                     })}
+                </select>
+                <select onChange={e => handleAgressive(e)}>
+                    <option hidden>Eliminar agresivos</option>
+                    <option value="All">Todos</option>
+                    <option value="Sin">Sin Agresivos</option>
                 </select>
                 <select onChange={e => handleOrderPeso(e)}>
                     <option hidden>Ordenar por peso</option>

@@ -1,42 +1,41 @@
-const { Dog, Temp, conn } = require("../../src/db")
-const { expect } = require('chai');
+const { Dog, Temp, conn } = require("../../src/db");
+const { expect } = require("chai");
 
-describe('Model Testing', function() {
- 
-  describe('Dog model', function () {
-    beforeEach(async function() {
+describe("Model Testing", function () {
+  describe("Dog model", function () {
+    beforeEach(async function () {
       await Dog.sync({ force: true });
     });
-    describe('Validations', function () {
-      it('Should not be created without all required fields completed', function(done) {
-         Dog.create({
-          name: 'Rofo',
-         })
-          .then(() => done('Should not have been created, dude!'))
+    describe("Validations", function () {
+      it("Should not be created without all required fields completed", function (done) {
+        Dog.create({
+          name: "Rofo",
+        })
+          .then(() => done("Should not have been created, dude!"))
           .catch(() => done());
       });
-      it('Should not be created without all required fields completed', function(done) {
+      it("Should not be created without all required fields completed", function (done) {
         Dog.create({
-          height: 'ARG',
+          height: "ARG",
         })
-        .then(() => done('Should not have been created, dude!'))
-        .catch(() => done());
+          .then(() => done("Should not have been created, dude!"))
+          .catch(() => done());
       });
     });
-  })
-  describe('Temperament model', function () {
-    beforeEach(async function() {
+  });
+  describe("Temperament model", function () {
+    beforeEach(async function () {
       await Temp.sync({ force: true });
     });
-        it('Should not be created without all required fields completed', function(done) {
-          Temp.create({
-          id: '11',
-        })
-        .then(() => done('Should not have been created, dude!'))
-        .catch(() => done());
-      });
-      it('Name should be a string', function(){
-        expect(typeof Temp.name).equal("string")
+    it("Should not be created without all required fields completed", function (done) {
+      Temp.create({
+        id: "11",
       })
+        .then(() => done("Should not have been created, dude!"))
+        .catch(() => done());
     });
-})
+    it("Name should be a string", function () {
+      expect(typeof Temp.name).equal("string");
+    });
+  });
+});

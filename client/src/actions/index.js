@@ -227,6 +227,12 @@ export function getDogById(payload){
     }
 }
 
+export function delAgresives(payload){
+    return {
+        type: "NO_AGRESSIVES",
+        payload
+    }
+}
 // export function createTemp(payload,id){
 // console.log(payload,id)
 // return async function(dispatch){

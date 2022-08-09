@@ -6,11 +6,10 @@ const axios = require("axios");
 const { Dog, Temp } = require("../db.js");
 const { Op } = require("sequelize");
 const router = Router();
-var dog = require("./dog")
-const temp = require ("./temp")
-
+var dog = require("./dog");
+const temp = require("./temp");
 
 router.use("/dog", dog);
-router.use("/temperament", temp)
+router.use("/temperament", temp);
 
 module.exports = router;
