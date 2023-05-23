@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { getDogs, getTemperaments, filterByTemp, getBreeds, filterByBreed, orderByName, orderByPeso, filterApiBd, delAgresives } from "../actions";
+import { cleanState, getDogs, getTemperaments, filterByTemp, getBreeds, filterByBreed, orderByName, orderByPeso, filterApiBd } from "../actions";
 import { NavLink } from "react-router-dom"
 import SearchBar from "./SearchBar";
 import Paginado from "./Paginado";
@@ -26,6 +26,9 @@ export default function Home() {
         dispatch(getDogs())
         dispatch(getTemperaments())
         dispatch(getBreeds())
+        return () => {
+            dispatch(cleanState())
+        }
     }, [dispatch])
 
 
@@ -66,11 +69,6 @@ export default function Home() {
         setCurrentPage(1)
     }
 
-    function handleAgressive(e) {
-        e.preventDefault()
-        dispatch(delAgresives(e.target.value))
-        setCurrentPage(1)
-    }
 
 
     return (
@@ -107,11 +105,6 @@ export default function Home() {
                         return (<option value={e} key={e}>{e}</option>)
                     })}
                 </select>
-                <select onChange={e => handleAgressive(e)}>
-                    <option hidden>Eliminar agresivos</option>
-                    <option value="All">Todos</option>
-                    <option value="Sin">Sin Agresivos</option>
-                </select>
                 <select onChange={e => handleOrderPeso(e)}>
                     <option hidden>Ordenar por peso</option>
                     <option value="weight asc">Ordenar por peso ascendente</option>
@@ -127,7 +120,7 @@ export default function Home() {
                 Resetear filtros
             </button>
             <div>
-                <Paginado dogsPerPage={dogsPerPage} allDogs={allDogs} paginado={paginado} />
+                <Paginado dogsPerPage={dogsPerPage} allDogs={allDogs} paginado={paginado} currentPage={currentPage} />
             </div>
             <SearchBar />
             <div className="cardsgrid">
@@ -142,7 +135,7 @@ export default function Home() {
                 }
             </div>
             <div>
-                <Paginado className="paginado" dogsPerPage={dogsPerPage} allDogs={allDogs} paginado={paginado} />
+                <Paginado className="paginado" dogsPerPage={dogsPerPage} allDogs={allDogs} paginado={paginado} currentPage={currentPage} />
             </div>
         </div>
     )

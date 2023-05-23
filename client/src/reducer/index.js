@@ -129,24 +129,27 @@ function rootReducer (state=inicialState, action){
                 // console.log(action.payload)
                 return {
                 ...state,
-                dogs: action.payload==="" ? state.allDogs: action.payload
+                dogs:action.payload
             }
             case "SEARCH_BAR_TEMP":
                 // console.log(action.payload)
                 return {
                 ...state,
-                dogs: action.payload==="" ? state.allDogs: action.payload
+                dogs:action.payload
             }
             case "SEARCH_TEMPS":
                 return{
                     ...state,
                     temps: action.payload
-            }
-            case "NO_AGRESSIVES":
-            let dogsAgresive = action.payload==="All"? state.allDogs : state.allDogs.filter(e=>!e.temperament.includes("Aggressive"))
-            return{
-                    ...state,
-                    dogs:dogsAgresive 
+                }
+            case "CLEAN_STATE":
+                return{
+                    dogs : [],
+                    allDogs:[],
+                    temps: [],
+                    breeds:[],
+                    allbreeds:[],
+                    detail:[],
                 }
           
     default:

@@ -26,6 +26,12 @@
   width: 8%;
 }
 
+.image-dog:hover {
+  transition: all 10s cubic-bezier(0.175, 0.885, 0, 1);
+  transform: scale(3, 3);
+}
+
+
 .h1-dogCreate {
   position: relative;
   padding-top: 2%;
@@ -85,8 +91,7 @@
 
 .button-details {
   cursor: pointer;
-  padding-top: 200px;
-  margin-top: 50%;
+  margin-top: 5%;
   border: 2px solid rgb(28, 27, 27);
   color: rgb(51, 48, 48);
   border-radius: 50px;
@@ -168,10 +173,6 @@
   max-height: 50%;
 }
 
-.image-dog:hover {
-  transition: all 10s cubic-bezier(0.175, 0.885, 0, 1);
-  transform: scale(3, 3);
-}
 
 .cointainer2 {
   display: flex;

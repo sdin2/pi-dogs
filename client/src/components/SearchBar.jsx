@@ -1,4 +1,4 @@
-import { searchBarsearch, getDogs, searchBarsearchBreed, searchBarsearchTemp } from "../actions"
+import { cleanState, searchBarsearch, getDogs, searchBarsearchBreed, searchBarsearchTemp } from "../actions"
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 
@@ -31,6 +31,9 @@ function SearchBar() {
 
     useEffect(() => {
         dispatch(getDogs())
+        return () => {
+            dispatch(cleanState())
+        }
     }, [dispatch])
     // console.log(allDogsList)
 
