@@ -45,8 +45,8 @@ let allTemperamentsDb = async () => {
 
 // Syncing all the models at once.
 conn.sync().then(() => {
-  server.listen(3001, () => {
-    console.log("%s listening at 3001"); // eslint-disable-line no-console
+  server.listen(5432, () => {
+    console.log("%s listening at 5432"); // eslint-disable-line no-console
     allTemperamentsDb();
   });
 });
